@@ -1,10 +1,19 @@
-data = [5, 2, 9, 1, 5, 6]
+def bubble_sort(numbers):
+    n = len(numbers)
 
-for i in range(len(data)):
-    for j in range(len(data)):
-        if data[i] < data[j]:
-            temp = data[i]
-            data[i] = data[j]
-            data[j] = temp
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
 
-print(data)
+    return numbers
+
+
+def main():
+    angka = [5, 2, 9, 1, 5, 6]
+    hasil = bubble_sort(angka)
+    print("Hasil sorting:", hasil)
+
+
+if __name__ == "__main__":
+    main()
